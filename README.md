@@ -26,30 +26,7 @@ WorldApp es una aplicacion web desarrollada con ASP.NET Core MVC que permite ges
 
 ## Estructura del proyecto
 
-WorldApp/
-├── Controllers/
-│   ├── AccountController.cs
-│   ├── CitiesController.cs
-│   ├── CountriesController.cs
-│   └── CountryLanguagesController.cs
-├── Models/
-│   ├── WorldContext.cs
-│   ├── City.cs
-│   ├── Country.cs
-│   ├── CountryLanguage.cs
-│   └── ViewModels (LoginViewModel, RegisterViewModel, etc.)
-├── Views/
-│   ├── Account/
-│   ├── Cities/
-│   ├── Countries/
-│   ├── CountryLanguages/
-│   └── Shared/
-│       └── _Layout.cshtml
-├── Services/
-│   ├── IEmailSender.cs
-│   └── ConsoleEmailSender.cs
-├── appsettings.json
-├── Program.cs
+<img width="1103" height="1124" alt="image" src="https://github.com/user-attachments/assets/2680c4c4-228a-4a63-9a6e-c7bac35d599b" />
 
 ## Instalacion y ejecucion local
 
