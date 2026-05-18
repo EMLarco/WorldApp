@@ -40,7 +40,7 @@ WorldApp es una aplicacion web desarrollada con ASP.NET Core MVC que permite ges
 ### Pasos
 
 1. Clonar el repositorio
-   git clone https://github.com/tu-usuario/WorldApp.git
+   git clone https://github.com/EMLarco/WorldApp.git
    cd WorldApp
 
 2. Configurar la base de datos
