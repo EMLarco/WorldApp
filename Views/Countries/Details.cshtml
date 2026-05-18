@@ -1,0 +1,39 @@
+﻿@model WorldApp.Models.Country
+@{
+    ViewData["Title"] = "Detalles del país";
+}
+<h1>@Model.Name</h1>
+<dl class="row">
+    <dt class="col-sm-2">Código</dt>
+    <dd class="col-sm-10">@Model.Code</dd>
+    <dt class="col-sm-2">Nombre</dt>
+    <dd class="col-sm-10">@Model.Name</dd>
+    <dt class="col-sm-2">Continente</dt>
+    <dd class="col-sm-10">@Model.Continent</dd>
+    <dt class="col-sm-2">Región</dt>
+    <dd class="col-sm-10">@Model.Region</dd>
+    <dt class="col-sm-2">Superficie</dt>
+    <dd class="col-sm-10">@Model.SurfaceArea.ToString("N2")</dd>
+    <dt class="col-sm-2">Independencia</dt>
+    <dd class="col-sm-10">@Model.IndepYear</dd>
+    <dt class="col-sm-2">Población</dt>
+    <dd class="col-sm-10">@Model.Population.ToString("N0")</dd>
+    <dt class="col-sm-2">Esperanza de vida</dt>
+    <dd class="col-sm-10">@Model.LifeExpectancy</dd>
+    <dt class="col-sm-2">PIB</dt>
+    <dd class="col-sm-10">@Model.GNP?.ToString("N2")</dd>
+    <dt class="col-sm-2">PIB antiguo</dt>
+    <dd class="col-sm-10">@Model.GNPOld?.ToString("N2")</dd>
+    <dt class="col-sm-2">Nombre local</dt>
+    <dd class="col-sm-10">@Model.LocalName</dd>
+    <dt class="col-sm-2">Gobierno</dt>
+    <dd class="col-sm-10">@Model.GovernmentForm</dd>
+    <dt class="col-sm-2">Jefe de Estado</dt>
+    <dd class="col-sm-10">@Model.HeadOfState</dd>
+    <dt class="col-sm-2">Capital</dt>
+    <dd class="col-sm-10">@Model.Capital</dd>
+    <dt class="col-sm-2">Código2</dt>
+    <dd class="col-sm-10">@Model.Code2</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.Code" class="btn btn-warning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

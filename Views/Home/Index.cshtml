@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+    // Opcional: puedes inyectar el contexto para mostrar estadísticas reales
+    // pero por ahora usaremos valores de ejemplo o datos del ViewBag
+}
+
+<style>
+    /* Ajustes adicionales para tarjetas y botones */
+    .welcome-card {
+        background: rgba(255, 255, 255, 0.95);
+        border: none;
+        border-radius: 1.5rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+        overflow: hidden;
+    }
+
+        .welcome-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+
+    .stats-card {
+        background: white;
+        border-left: 5px solid #000;
+        border-radius: 1rem;
+        transition: 0.2s;
+    }
+
+        .stats-card:hover {
+            transform: scale(1.02);
+        }
+
+    .btn-custom-black {
+        background-color: #000;
+        color: white;
+        border-radius: 2rem;
+        padding: 0.5rem 1.5rem;
+        transition: 0.2s;
+        border: none;
+    }
+
+        .btn-custom-black:hover {
+            background-color: #333;
+            color: white;
+            transform: scale(1.02);
+        }
+
+    .icon-large {
+        font-size: 2.5rem;
+        color: #000;
+    }
+
+    .section-title {
+        border-left: 5px solid #000;
+        padding-left: 1rem;
+        margin-bottom: 1.5rem;
+    }
+</style>
+
+<div class="container">
+    <!-- Tarjeta de bienvenida (centrada) -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            <div class="welcome-card shadow p-4 text-center">
+                <h1 class="display-4 fw-bold">¡Bienvenido, @User.Identity.Name!</h1>
+                <p class="lead mt-3">Sistema de gestión de ciudades, países e idiomas del mundo.</p>
+                <hr class="my-3" style="width: 80px; border-top: 3px solid #000;">
+                <p class="text-muted">Explora y administra información geográfica de forma fácil y segura.</p>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-custom-black mt-2">Iniciar sesión</a>
+                    <a asp-controller="Account" asp-action="Register" class="btn btn-outline-dark mt-2 ms-2">Registrarse</a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de estadísticas rápidas (accesos directos) -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="stats-card p-3 d-flex align-items-center">
+                <div class="me-3">
+                    <i class="fas fa-city icon-large"></i>
+                </div>
+                <div>
+                    <h5 class="mb-1">Ciudades</h5>
+                    <p class="mb-0 text-muted">Gestiona el catálogo de ciudades</p>
+                    <a asp-controller="Cities" asp-action="Index" class="btn btn-sm btn-outline-dark mt-2">Ver ciudades →</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stats-card p-3 d-flex align-items-center">
+                <div class="me-3">
+                    <i class="fas fa-globe-americas icon-large"></i>
+                </div>
+                <div>
+                    <h5 class="mb-1">Países</h5>
+                    <p class="mb-0 text-muted">Información detallada de países</p>
+                    <a asp-controller="Countries" asp-action="Index" class="btn btn-sm btn-outline-dark mt-2">Ver países →</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stats-card p-3 d-flex align-items-center">
+                <div class="me-3">
+                    <i class="fas fa-language icon-large"></i>
+                </div>
+                <div>
+                    <h5 class="mb-1">Idiomas</h5>
+                    <p class="mb-0 text-muted">Idiomas oficiales y regionales</p>
+                    <a asp-controller="CountryLanguages" asp-action="Index" class="btn btn-sm btn-outline-dark mt-2">Ver idiomas →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de información adicional (opcional) -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm p-4">
+                <h4 class="section-title">Sobre WorldApp</h4>
+                <p>Aplicación desarrollada en ASP.NET Core MVC con Entity Framework Core y SQL Server. Incluye autenticación de usuarios, CRUD completo, paginación, eliminación lógica, búsqueda y diseño responsivo con Bootstrap 5.</p>
+                <p>La base de datos utilizada es <code>world</code>, que contiene información de países, ciudades e idiomas. La relación principal es entre <strong>Ciudades</strong> y <strong>Países</strong> (una ciudad pertenece a un país).</p>
+                <hr />
+
+            </div>
+        </div>
+    </div>
+</div>

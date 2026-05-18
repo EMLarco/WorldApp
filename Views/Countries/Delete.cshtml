@@ -1,0 +1,11 @@
+﻿@model WorldApp.Models.Country
+@{
+    ViewData["Title"] = "Eliminar país";
+}
+<h1>Eliminar país</h1>
+<h3>¿Está seguro de eliminar @Model.Name ?</h3>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Code" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -1,0 +1,12 @@
+﻿@model WorldApp.Models.CountryLanguage
+@{
+    ViewData["Title"] = "Eliminar idioma";
+}
+<h1>Eliminar idioma</h1>
+<h3>¿Está seguro de eliminar el idioma @Model.Language para @Model.Country?.Name ?</h3>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="CountryCode" />
+    <input type="hidden" asp-for="Language" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

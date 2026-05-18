@@ -1,0 +1,92 @@
+﻿@model WorldApp.Models.Country
+
+@{
+    ViewData["Title"] = "Editar país";
+}
+
+<h1>Editar país</h1>
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="Code" />
+    <input type="hidden" asp-for="IsDeleted" />
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Continent" class="form-label"></label>
+        <input asp-for="Continent" class="form-control" />
+        <span asp-validation-for="Continent" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Region" class="form-label"></label>
+        <input asp-for="Region" class="form-control" />
+        <span asp-validation-for="Region" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="SurfaceArea" class="form-label"></label>
+        <input asp-for="SurfaceArea" class="form-control" />
+        <span asp-validation-for="SurfaceArea" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="IndepYear" class="form-label"></label>
+        <input asp-for="IndepYear" class="form-control" />
+        <span asp-validation-for="IndepYear" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Population" class="form-label"></label>
+        <input asp-for="Population" class="form-control" />
+        <span asp-validation-for="Population" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="LifeExpectancy" class="form-label"></label>
+        <input asp-for="LifeExpectancy" class="form-control" />
+        <span asp-validation-for="LifeExpectancy" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="GNP" class="form-label"></label>
+        <input asp-for="GNP" class="form-control" />
+        <span asp-validation-for="GNP" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="GNPOld" class="form-label"></label>
+        <input asp-for="GNPOld" class="form-control" />
+        <span asp-validation-for="GNPOld" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="LocalName" class="form-label"></label>
+        <input asp-for="LocalName" class="form-control" />
+        <span asp-validation-for="LocalName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="GovernmentForm" class="form-label"></label>
+        <input asp-for="GovernmentForm" class="form-control" />
+        <span asp-validation-for="GovernmentForm" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="HeadOfState" class="form-label"></label>
+        <input asp-for="HeadOfState" class="form-control" />
+        <span asp-validation-for="HeadOfState" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Capital" class="form-label"></label>
+        <input asp-for="Capital" class="form-control" />
+        <span asp-validation-for="Capital" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Code2" class="form-label"></label>
+        <input asp-for="Code2" class="form-control" maxlength="2" />
+        <span asp-validation-for="Code2" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-warning">Actualizar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

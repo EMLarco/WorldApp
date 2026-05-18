@@ -1,0 +1,43 @@
+﻿@model WorldApp.Models.City
+@{
+    ViewData["Title"] = "Eliminar ciudad";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center p-5">
+                <i class="fas fa-exclamation-triangle text-warning fa-4x mb-3"></i>
+                <h3 class="fw-bold">Confirmar eliminación</h3>
+                <p class="text-muted mb-4">
+                    ¿Está seguro de eliminar la ciudad <strong>@Model.Name</strong>?
+                </p>
+
+                <dl class="row text-start">
+                    <dt class="col-sm-4">ID</dt>
+                    <dd class="col-sm-8">@Model.Id</dd>
+                    <dt class="col-sm-4">Nombre</dt>
+                    <dd class="col-sm-8">@Model.Name</dd>
+                    <dt class="col-sm-4">País</dt>
+                    <dd class="col-sm-8">@(Model.Country?.Name ?? Model.CountryCode)</dd>
+                    <dt class="col-sm-4">Distrito</dt>
+                    <dd class="col-sm-8">@Model.District</dd>
+                    <dt class="col-sm-4">Población</dt>
+                    <dd class="col-sm-8">@Model.Population.ToString("N0")</dd>
+                </dl>
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4">
+                            <i class="fas fa-times me-1"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-danger rounded-pill px-4">
+                            <i class="fas fa-trash-alt me-1"></i> Eliminar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
